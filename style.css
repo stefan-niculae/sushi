@@ -1,0 +1,131 @@
+@charset "UTF-8";
+@font-face {
+  font-family: CinnabarBrush;
+  src: url("assets/fonts/DK Cinnabar Brush.ttf"); }
+@font-face {
+  font-family: NimbusSansL;
+  src: url("assets/fonts/NimbusSanL-Reg.otf"); }
+@font-face {
+  font-family: Vollkorn;
+  src: url("assets/fonts/Vollkorn-Regular.ttf"); }
+@font-face {
+  font-family: AvenirNext;
+  src: url("assets/fonts/avenir-next-regular.ttf"); }
+@font-face {
+  font-family: AvenirNext;
+  font-weight: bold;
+  src: url("assets/fonts/avenir-next-bold.ttf"); }
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 17px;
+  font-family: "Nimbus Sans L", NimbusSansL, "Open Sans", "Clear Sans", sans-serif;
+  color: rgba(0, 0, 0, 0.85); }
+
+body {
+  background: url("assets/img/bg/handmadepaper.png");
+  max-width: 800px;
+  margin: auto; }
+
+@media only screen and (max-width: 480px) {
+  body {
+    padding-left: 20px;
+    padding-right: 20px; } }
+@media only screen and (min-width: 480px) {
+  body {
+    padding-left: 40px;
+    padding-right: 40px; } }
+#heading {
+  margin-top: 50px;
+  margin-bottom: 13rem; }
+  #heading #tagline, #heading #page-title {
+    font-family: CinnabarBrush, "Open Sans", "Clear Sans", sans-serif;
+    text-transform: uppercase;
+    text-align: center; }
+  #heading #tagline {
+    color: rgba(0, 0, 0, 0.85); }
+  #heading #page-title {
+    font-size: 100px;
+    color: black; }
+  #heading img {
+    position: absolute;
+    width: 292px;
+    height: 232px;
+    z-index: -1;
+    top: 60px;
+    left: calc(50% - 145px); }
+
+#instructions {
+  margin-bottom: 1em;
+  color: rgba(0, 0, 0, 0.65); }
+
+section {
+  margin-bottom: 4rem; }
+  section h2 {
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.65);
+    font-size: 1.5rem;
+    font-family: "Avenir Next", AvenirNext, "Open Sans", "Clear Sans", sans-serif;
+    margin-bottom: 0.35rem; }
+  section .items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: -1%; }
+    section .items .item {
+      margin: 10px 1%;
+      border-radius: 2%;
+      box-shadow: 0 3px 0 0 #d4d4d5, 0 0 0 1px #d4d4d5;
+      background: url("assets/img/bg/groovepaper.png"); }
+      section .items .item img {
+        width: 100%;
+        object-fit: cover;
+        border-radius: 2% 2% 0 0; }
+      section .items .item p {
+        margin: 10px 10px; }
+        section .items .item p::first-letter {
+          text-transform: uppercase; }
+        section .items .item p.caption {
+          text-transform: capitalize;
+          font-family: Vollkorn, Palatino, Times, serif;
+          font-size: 1.35rem; }
+    section .items:after {
+      content: "";
+      flex: auto; }
+
+@media only screen and (max-width: 480px) {
+  .item {
+    width: 47%; }
+
+  img {
+    height: 150px; } }
+@media only screen and (min-width: 480px) {
+  .item {
+    width: 30.83333%; }
+
+  img {
+    height: 200px; } }
+#more-info h3 {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  font-family: Vollkorn, Palatino, Times, serif; }
+#more-info ul {
+  list-style: none;
+  margin-left: 1%; }
+  #more-info ul li {
+    margin-bottom: 0.2rem; }
+    #more-info ul li:before {
+      content: "› "; }
+
+footer,
+footer a {
+  color: gray; }
+
+footer {
+  width: 85%;
+  text-align: center;
+  margin: 5rem auto 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(34, 36, 38, 0.09804); }
+
+/*# sourceMappingURL=style.css.map */

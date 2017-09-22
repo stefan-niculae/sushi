@@ -1,0 +1,165 @@
+@charset "UTF-8"
+
+@font-face
+  font-family: CinnabarBrush
+  src: url("assets/fonts/DK Cinnabar Brush.ttf")
+@font-face
+  font-family: NimbusSansL
+  src: url("assets/fonts/NimbusSanL-Reg.otf")
+@font-face
+  font-family: Vollkorn
+  src: url("assets/fonts/Vollkorn-Regular.ttf")
+@font-face
+  font-family: AvenirNext
+  src: url("assets/fonts/avenir-next-regular.ttf")
+@font-face
+  font-family: AvenirNext
+  font-weight: bold
+  src: url("assets/fonts/avenir-next-bold.ttf")
+
+$title-fonts: CinnabarBrush, "Open Sans", "Clear Sans", sans-serif
+$header-fonts: "Avenir Next", AvenirNext, "Open Sans", "Clear Sans", sans-serif
+$subheader-fonts: Vollkorn, Palatino, Times, serif
+$body-fonts: "Nimbus Sans L", NimbusSansL, "Open Sans", "Clear Sans", sans-serif
+
+$mobile-only: "only screen and (max-width: 480px)"
+$desktop-only: "only screen and (min-width: 480px)"
+
+
+*
+  margin: 0
+  padding: 0
+
+  font-size: 17px
+  font-family: $body-fonts
+
+  color: rgba(0, 0, 0, 0.85)
+
+
+body
+  background: url("assets/img/bg/handmadepaper.png")
+  max-width: 800px
+  margin: auto // center horizontally
+@media #{$mobile-only}
+  body
+    padding-left: 20px
+    padding-right: 20px
+@media #{$desktop-only}
+  body
+    padding-left: 40px
+    padding-right: 40px
+
+
+#heading
+  margin-top: 50px
+  margin-bottom: 13rem
+
+  #tagline, #page-title
+    font-family: $title-fonts
+    text-transform: uppercase
+    text-align: center
+
+  #tagline
+    color: rgba(0, 0, 0, 0.85)
+  #page-title
+    font-size: 100px
+    color: black
+
+  img
+    position: absolute
+    width: 292px
+    height: 232px
+    z-index: -1
+    top: 60px
+    left: calc(50% - 145px)
+
+
+#instructions
+  margin-bottom: 1em
+  color: rgba(0, 0, 0, 0.65)
+
+
+$shadow-grey: rgb(212, 212, 213)
+$item-radius: 2%
+$item-margin: 1%
+
+section
+  margin-bottom: 4rem
+
+  h2
+    text-transform: uppercase
+    color: rgba(0, 0, 0, 0.65)
+    font-size: 1.5rem
+    font-family: $header-fonts
+    margin-bottom: .35rem
+
+  .items
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    margin: 0 -$item-margin // to counter-act the margin from items
+
+    .item
+      margin: 10px $item-margin
+      border-radius: $item-radius
+      box-shadow: 0 3px 0 0 $shadow-grey, 0 0 0 1px $shadow-grey
+      background: url("assets/img/bg/groovepaper.png")
+
+      img
+        width: 100%
+        object-fit: cover // like background
+        border-radius: $item-radius $item-radius 0 0
+
+      p
+        margin: 10px 10px
+        &::first-letter
+          text-transform: uppercase
+        &.caption
+          text-transform: capitalize
+          font-family: $subheader-fonts
+          font-size: 1.35rem
+
+
+    // FIXME last margin
+    &:after // when there are two items on the bottom row, put both on the left
+      content: ''
+      flex: auto
+
+@media #{$mobile-only}
+  .item
+    width: 100%/2 - 3*$item-margin // two column layout on mobile
+  img
+    height: 150px
+@media #{$desktop-only}
+  .item
+    width: 100%/3 - 2.5*$item-margin // three column layout on mobile
+  img
+    height: 200px
+
+
+#more-info
+  h3
+    //font-variant: small-caps
+    margin-top: 1rem
+    font-size: 1.2rem
+    font-family: $subheader-fonts
+  ul
+    list-style: none
+    margin-left: 1%
+
+    li
+      margin-bottom: .2rem
+      &:before
+        content: '› '
+
+
+footer,
+footer a
+  color: gray
+
+footer
+  width: 85%
+  text-align: center
+  margin: 5rem auto 2rem
+  padding-top: 1rem
+  border-top: 1px solid rgba(34, 36, 38, 0.0980392)
